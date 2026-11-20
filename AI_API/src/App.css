@@ -1,0 +1,354 @@
+.app-shell {
+  min-height: 100svh;
+  padding: 1px 40px 48px;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(86, 47, 150, 0.18), transparent 58%),
+    var(--bg);
+}
+
+.chat-home {
+  width: min(100%, 880px);
+  margin: clamp(42px, 8vh, 78px) auto 0;
+}
+
+.brain-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  color: var(--accent);
+}
+
+.brain-mark svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+}
+
+h1 {
+  margin: 0;
+  color: var(--text-h);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 20px 0 62px;
+  color: var(--text);
+  font-size: clamp(16px, 2.5vw, 24px);
+  text-align: center;
+}
+
+.chat-form {
+  display: grid;
+  gap: 30px;
+}
+
+.conversation {
+  display: grid;
+  max-height: 360px;
+  gap: 12px;
+  overflow-y: auto;
+  margin: -32px 0 42px;
+}
+
+.message {
+  border: 1px solid var(--input-border);
+  border-radius: 9px;
+  padding: 13px 15px;
+  background: var(--input-bg);
+}
+
+.message.user {
+  margin-left: 10%;
+  background: rgba(119, 55, 211, 0.14);
+}
+
+.message-label {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+.message > p {
+  margin: 6px 0 0;
+  color: var(--text-h);
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.message-sources details {
+  max-width: 100%;
+}
+
+.message-sources summary {
+  overflow: hidden;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-sources details p {
+  max-width: 520px;
+  margin: 6px 0 0;
+  color: var(--text);
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.field-group {
+  display: grid;
+  gap: 10px;
+}
+
+.field-group label {
+  color: var(--text-h);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text-h);
+  font: 16px/1.5 var(--sans);
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+input.form-input {
+  height: 60px;
+  padding: 0 18px;
+}
+
+.prompt-input {
+  min-height: 134px;
+  padding: 16px 18px;
+  resize: vertical;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-input::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+.field-help {
+  margin: -5px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: -7px;
+}
+
+.upload-button,
+.send-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 18px;
+  color: #fff;
+  cursor: pointer;
+  font: 600 15px/1 var(--sans);
+  transition:
+    background-color 140ms ease,
+    transform 140ms ease;
+}
+
+.upload-button {
+  background: var(--button-secondary);
+}
+
+.send-button {
+  background: var(--accent);
+}
+
+.upload-button:hover,
+.send-button:hover {
+  transform: translateY(-1px);
+}
+
+.upload-button:disabled,
+.send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+.upload-button:hover {
+  background: var(--button-secondary-hover);
+}
+
+.send-button:hover {
+  background: var(--accent-hover);
+}
+
+.upload-button svg,
+.send-button svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -17px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 5px 9px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-list li span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-list li button {
+  flex: 0 0 auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.file-list li button:hover {
+  color: var(--text-h);
+}
+
+.form-notice {
+  border: 1px solid rgba(255, 120, 120, 0.25);
+  border-radius: 7px;
+  margin: -14px 0 0;
+  padding: 9px 11px;
+  background: rgba(255, 90, 90, 0.08);
+  color: #ffb4b4;
+  font-size: 13px;
+}
+
+.privacy-note {
+  margin: -17px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 1px 20px 36px;
+  }
+
+  .chat-home {
+    margin-top: 40px;
+  }
+
+  .subtitle {
+    margin: 14px 0 42px;
+  }
+
+  .chat-form {
+    gap: 24px;
+  }
+
+  .conversation {
+    margin: -18px 0 32px;
+  }
+
+  .field-group label {
+    font-size: 14px;
+  }
+
+  input.form-input {
+    height: 54px;
+  }
+
+  .prompt-input {
+    min-height: 120px;
+  }
+
+  .upload-button,
+  .send-button {
+    min-height: 44px;
+    padding: 0 13px;
+    font-size: 14px;
+  }
+}
